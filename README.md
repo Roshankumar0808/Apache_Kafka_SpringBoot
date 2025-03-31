@@ -45,9 +45,10 @@ Many systems use both:
 * MySQL for storing final processed data (e.g., "User's total clicks")
 
 It is advisable to not use Kafka if your system is having very simple operations that can be handled by RDBMS database.
+![alt text](https://github.com/Roshankumar0808/Apache_Kafka_SpringBoot/blob/master/kafkaimg4.png)
 
 ## **Key Kafka Concepts**
-
+![alt text](https://github.com/Roshankumar0808/Apache_Kafka_SpringBoot/blob/master/kafkaimg1.png)
 ### **1. Producer**
 **What?** A sender (app/service) that **publishes messages** (events) to Kafka.  
 **Example:**  
@@ -80,12 +81,13 @@ It is advisable to not use Kafka if your system is having very simple operations
 **Example:**  
 - A **newspaper** (topic) has different sections: *Sports*, *Politics*, *Weather*.  
 - Kafka topics: `orders`, `user_logins`, `payment_events`.  
-
+![alt text](https://github.com/Roshankumar0808/Apache_Kafka_SpringBoot/blob/master/kafkaimg2.png)
 ### **7. Partition**
 **What?** A topic is split into partitions for **parallel processing**.  
 **Example:**  
 - A **highway with multiple lanes** (partitions) to avoid traffic jams.  
-- Topic `orders` has 3 partitions → 3x faster processing.  
+- Topic `orders` has 3 partitions → 3x faster processing.
+![alt text](https://github.com/Roshankumar0808/Apache_Kafka_SpringBoot/blob/master/kafkaimg3.png)
 
 ### **8. Offset**
 **What?** A unique ID for each message in a partition (like a page number in a book).  
@@ -234,7 +236,6 @@ When a **new consumer** is added to a **consumer group** in Kafka, Kafka automat
 - Cons: **Brief pause** during rebalance.  
 
 ## **What Happens When a Kafka Broker Goes Down?**
-*(Explained Simply with a Real-Life Example)*  
 
 Imagine Kafka brokers (servers) as **post offices** in a city, and messages (events) as **letters** being delivered.  
 
@@ -333,12 +334,12 @@ KRaft (**K**afka **Raft**) is Kafka's built-in **metadata management system** th
 ### **1. acks (Acknowledgment)**
 Controls how many brokers must confirm they received a message before the producer considers it "successful."
 
-![Kafka Acknowledgments](https://github.com/Roshankumar0808/Apache_Kafka_SpringBoot/blob/master/kafkaimg1.png)
+![Kafka Acknowledgments](https://github.com/Roshankumar0808/Apache_Kafka_SpringBoot/blob/master/kafkaimg6.png)
 
 ### **2. retries**
 Number of times the producer resends a failed message.
 
-![Kafka Retries](https://github.com/Roshankumar0808/Apache_Kafka_SpringBoot/blob/master/kafkaimg1.png)
+![Kafka Retries](https://github.com/Roshankumar0808/Apache_Kafka_SpringBoot/blob/master/kafkaimg7.png)
 
 ## **How Two Microservices Communicate via Kafka (Without Eureka)**
 
@@ -359,7 +360,7 @@ Number of times the producer resends a failed message.
   - Use **Kafka** for event-driven workflows (e.g., order processing).  
 
 ## **Producer-Consumer Message Flow**
-![Producer-Consumer Flow](https://github.com/Roshankumar0808/Apache_Kafka_SpringBoot/blob/master/kafkaimg1.png)
+![Producer-Consumer Flow](https://github.com/Roshankumar0808/Apache_Kafka_SpringBoot/blob/master/kafkaimg8.png)
 
 ## **Kafka Schema Registry: Why It's Needed**
 
